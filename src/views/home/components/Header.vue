@@ -3,14 +3,12 @@
 		<div class="header-left">
 			<div class="iconfont icon-fanhui"></div>
 		</div>
-		<div class="header-input">
+		<router-link to="/city" class="header-input">
 			<span class="iconfont icon-sousuo"></span>
-			输入城市/景点/游玩主题</div>
-		<router-link to="/city">	
-			<div class="header-right">
-				{{this.city}}
-				<span class="iconfont icon-jiantou"></span>
-			</div>
+			输入城市/景点/游玩主题</router-link>
+		<router-link to="/city" class="header-right">
+			{{this.city}}
+			<span class="iconfont icon-jiantou"></span>
 		</router-link>
 	</div>
 </template>
