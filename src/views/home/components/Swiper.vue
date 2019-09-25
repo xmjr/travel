@@ -18,12 +18,12 @@ export default {
 	data () {
 		return {
 			swiperOption: {
+				// 分页原点
 				pagination: {
-					// 分页原点
 					el: '.swiper-pagination'
 				},
 				loop: true,  // 开启循环轮播
-				autoplay: true
+				autoplay: true,  // 自动轮播
 			}
 		}
 	},

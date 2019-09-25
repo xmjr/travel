@@ -28,6 +28,7 @@
 			}
 		},
 		updated () {
+			// A字母距离header区域下沿的高度
 			this.startY = this.$refs['A'][0].offsetTop
 		},
 		computed: {
@@ -52,7 +53,9 @@
 						clearTimeout(this.timer)
 					}
 					this.timer = setTimeout(() => {
+						// 手指距离header区域下沿的高度（79px为header区域的高度）
 						const touchY = e.touches[0].clientY -79
+						// 当前字母下标，20px为每个字母的高度
 						const index = Math.floor((touchY - this.startY) / 20)
 
 						if (index >= 0 && index < this.letters.length) {

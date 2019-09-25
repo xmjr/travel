@@ -13,6 +13,40 @@
 		</swiper>
 	</div>
 </template>
+<script>
+	export default {
+		name: 'HomeIcons',
+		props: {
+			list: Array
+		},
+		data() {
+			return {
+				swiperOption: {
+					autoplay: false,
+					pagination: {
+						// 分页原点
+						el: '.swiper-pagination'
+					}
+				}
+			}
+		},
+		computed: {
+			// 根据数据项目的不同，自动构建icons多页切换功能
+			pages() {
+				const pages = []
+				this.list.forEach((item, index) => {
+					// 将iconList中index小于等于8的项放入到pages数组的第0项中，以此类推
+					const page = Math.floor(index / 8)
+					if (!pages[page]) {
+						pages[page] = []
+					}
+					pages[page].push(item)
+				})
+				return pages
+			}
+		}
+	}
+</script>
 <style lang="stylus" scoped>
 	@import '~@/assets/styles/varibles.styl'
 	@import '~@/assets/styles/mixins.styl'
@@ -62,36 +96,3 @@
 				ellipsis()
 
 </style>
-<script>
-	export default {
-		name: 'HomeIcons',
-		props: {
-			list: Array
-		},
-		data() {
-			return {
-				swiperOption: {
-					autoplay: false,
-					pagination: {
-						// 分页原点
-						el: '.swiper-pagination'
-					}
-				}
-			}
-		},
-		computed: {
-			pages() {
-				const pages = []
-				this.list.forEach((item, index) => {
-					// 将iconList中index小于等于8的项放入到pages数组的第0项中，以此类推
-					const page = Math.floor(index / 8)
-					if (!pages[page]) {
-						pages[page] = []
-					}
-					pages[page].push(item)
-				})
-				return pages
-			}
-		}
-	}
-</script>
