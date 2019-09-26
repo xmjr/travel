@@ -1,7 +1,7 @@
 <template>
 	<div class="header">
 		<div class="header-left">
-			<div class="iconfont icon-fanhui"></div>
+			<div class="iconfont icon-fanhui">&#xe624;</div>
 		</div>
 		<router-link to="/city" class="header-input">
 			<span class="iconfont icon-sousuo"></span>
@@ -9,7 +9,7 @@
 		<router-link to="/city">
 			<div class="header-right">
 				{{this.city}}
-				<span class="iconfont icon-jiantou"></span>
+				<span class="iconfont icon-jiantou">&#xe6aa;</span>
 			</div>
 		</router-link>
 	</div>

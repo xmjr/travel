@@ -2,7 +2,7 @@
 	<div class="header">
 		城市选择
 		<router-link to="/">
-			<div class="iconfont icon-fanhui"></div>
+			<div class="iconfont icon-fanhui">&#xe624;</div>
 		</router-link>
 	</div>
 </template>
