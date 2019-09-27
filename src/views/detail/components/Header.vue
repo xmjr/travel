@@ -30,23 +30,23 @@
 			handleScroll () {
 				const top = document.documentElement.scrollTop
 				// 当滚动距离大于60px时，显示
-				if(top > 60) {
-					// 滚动距离在60px和140px之间时，出现渐隐渐显效果；超过140px，则opacity值为1，完全显示。
-					let opacity = top / 140
-					opacity = opacity > 1 ? 1:opacity
-					this.opacityStyle = {
-						opacity
-					}
-					this.showAbs = false
-				} else {
-					this.showAbs = true
-				}
+        if(top > 60) {
+          // 滚动距离在60px和140px之间时，出现渐隐渐显效果；超过140px，则opacity值为1，完全显示。
+          let opacity = top / 140
+          opacity = opacity > 1 ? 1 : opacity
+          this.opacityStyle = {
+            opacity
+          }
+          this.showAbs = false
+        } else {
+          this.showAbs = true
+        }
 			}
 		},
-		activated () {
+		mounted () {
 			window.addEventListener('scroll', this.handleScroll)
 		},
-		deactivated() {
+		beforeDestroy () {
 			window.removeEventListener('scroll', this.handleScroll)
 		}
 	}
@@ -67,9 +67,8 @@
 		.header-abs-back
 			color: #fff
 			font-size: .4rem
-	
 	.header-fixed
-		z-index: 2
+		z-index:2
 		position: fixed
 		top: 0
 		left: 0

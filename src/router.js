@@ -1,8 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/home/Home.vue'
-import City from './views/city/City.vue'
-import Detail from './views/detail/Detail.vue'
 
 Vue.use(Router)
 
@@ -13,15 +10,15 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: () => import('./views/home/Home.vue')
     }, {
     	path: '/city',
       name: 'city',
-      component: City
+      component: () => import('./views/city/City.vue')
     }, {
       path: '/detail/:id',
       name: 'Detail',
-      component: Detail
+      component: () => import('./views/detail/Detail.vue')
     }
   ],
   scrollBehavior (to, from, savedPosition) {
