@@ -10,8 +10,15 @@
 	</div>
 </template>
 <script>
+import 'swiper/dist/css/swiper.css'
+import { swiper, swiperSlide } from 'vue-awesome-swiper' 
+
 export default {
 	name: 'HomeSwiper',
+	components: {
+		swiper,
+		swiperSlide
+	},
 	props: {
 		list: Array
 	},
@@ -23,7 +30,7 @@ export default {
 					el: '.swiper-pagination'
 				},
 				loop: true,  // 开启循环轮播
-				autoplay: true,  // 自动轮播
+				autoplay: true  // 自动轮播
 			}
 		}
 	},

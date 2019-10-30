@@ -80,7 +80,9 @@
 			...mapMutations(['changeCity'])
 		},
 		mounted () {
-			this.scroll = new Bscroll(this.$refs.search)
+			this.scroll = new Bscroll(this.$refs.search, {
+				click:true
+			})
 		}
 	}
 </script>
@@ -88,6 +90,8 @@
 	@import '~@/assets/styles/varibles.styl'
 
 	.search
+		position: relative
+		z-index: 10
 		height: .72rem
 		padding: 0 .1rem
 		background: $bgColor

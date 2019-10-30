@@ -81,8 +81,10 @@
 		top: 1.58rem
 		right: 0
 		bottom: 0
-		width: .4rem
+		width: .6rem
 		.item
+			width: .6rem
+			height: .4rem
 			line-height: .4rem
 			text-align: center
 			color: $bgColor

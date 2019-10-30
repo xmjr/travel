@@ -28,7 +28,8 @@
 		},
 		methods: {
 			handleScroll () {
-				const top = document.documentElement.scrollTop
+				const top = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+
 				// 当滚动距离大于60px时，显示
         if(top > 60) {
           // 滚动距离在60px和140px之间时，出现渐隐渐显效果；超过140px，则opacity值为1，完全显示。
@@ -44,7 +45,9 @@
 			}
 		},
 		mounted () {
-			window.addEventListener('scroll', this.handleScroll)
+			this.$nextTick(() => {
+				window.addEventListener('scroll', this.handleScroll)
+			})
 		},
 		beforeDestroy () {
 			window.removeEventListener('scroll', this.handleScroll)

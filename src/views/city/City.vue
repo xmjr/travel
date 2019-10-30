@@ -37,7 +37,7 @@
 		},
 		methods: {
 			getCityInfo () {
-				axios.get('/travel/api/city.json')
+				axios.get('/api/city.json')
 						.then(this.handleGetCityInfoSucc)
 			},
 			handleGetCityInfoSucc(res) {
@@ -54,6 +54,7 @@
 		},
 		mounted () {
 			this.getCityInfo()
+			console.log(this.$route.params.username)
 		}
 	}
 </script>

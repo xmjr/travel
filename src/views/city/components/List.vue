@@ -59,23 +59,38 @@
 				currentCity: 'city'
 			})
 		},
-		methods: {
-			handleCityClick(city) {
-				this.changeCity(city)
-				this.$router.push('/')
-			},
-			...mapMutations(['changeCity'])
-		},
 		watch: {
 			letter () {
 				if (this.letter) {
 					const element = this.$refs[this.letter][0]
 					this.scroll.scrollToElement(element)
 				}
+			},
+			'cities'() {
+				this.$nextTick(() => {
+					this._initScroll()
+				})
 			}
 		},
 		mounted() {
-			this.scroll = new Bscroll(this.$refs.wrapper)
+			this._initScroll()
+		},
+    methods: {
+			handleCityClick(city) {
+				this.changeCity(city)
+				this.$router.push('/')
+				console.log('wo')
+			},
+			...mapMutations(['changeCity']),
+			_initScroll() {
+				if (!this.scroll) {
+					this.scroll = new Bscroll(this.$refs.wrapper, {
+						click: true
+					})
+				} else {
+					this.scroll.refresh()
+				}
+			}
 		}
 	}
 </script>

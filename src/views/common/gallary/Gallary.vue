@@ -12,9 +12,15 @@
 	</div>
 </template>
 <script>
+import 'swiper/dist/css/swiper.css'
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
 	name: 'CommonGallary',
+	components: {
+		swiper,
+		swiperSlide
+	},
 	props: {
 		imgs: {
 			type: Array,
@@ -31,6 +37,7 @@ export default {
 					el: '.swiper-pagination',
 					type: 'fraction'
 				},
+				initialSlide: 0,
 				loop: true,  // 开启循环轮播
 				autoplay: true,  // 自动轮播,
 				observeParents: true,
