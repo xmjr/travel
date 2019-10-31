@@ -29,7 +29,7 @@ export default {
 	},
   methods: {
     getDetailInfo () {
-      axios.get('/api/detail.json', {
+      axios.get(process.env.VUE_APP_API + '/detail.json', {
         params: {
           id: this.$route.params.id
         }

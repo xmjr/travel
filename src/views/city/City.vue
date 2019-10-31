@@ -37,7 +37,7 @@
 		},
 		methods: {
 			getCityInfo () {
-				axios.get('/api/city.json')
+				axios.get(process.env.VUE_APP_API + '/city.json')
 						.then(this.handleGetCityInfoSucc)
 			},
 			handleGetCityInfoSucc(res) {
@@ -54,7 +54,6 @@
 		},
 		mounted () {
 			this.getCityInfo()
-			console.log(this.$route.params.username)
 		}
 	}
 </script>

@@ -79,7 +79,6 @@
 			handleCityClick(city) {
 				this.changeCity(city)
 				this.$router.push('/')
-				console.log('wo')
 			},
 			...mapMutations(['changeCity']),
 			_initScroll() {
